@@ -7,6 +7,10 @@ import java.util.stream.Stream;
 
 public class ZundokoStream {
 
+	/**
+	 * 「きよしのズンドコ節」の歌詞の一節を表示する。
+	 * @param args
+	 */
 	public static void main(String[] args) {
         Random rnd = new Random();
         String[] zunDoko = { "ズン", "ドコ" };
