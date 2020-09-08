@@ -7,7 +7,7 @@ public class FizzBuzzFor2 {
 	}
 
     /**
-     * 三項演算子を活用した方法。
+     * 三項演算子を活用した方法でFizzBuzz問題を解く。
      * @param end FizzBuzzを終える数。
      */
     public static void useForLoopWithTertiaryOperator(int end) {

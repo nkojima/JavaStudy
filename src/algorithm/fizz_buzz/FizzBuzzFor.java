@@ -7,7 +7,7 @@ public class FizzBuzzFor {
 	}
 
     /**
-     * for文を使った一般的な方法。
+     * for文を使った一般的な方法でFizzBuzz問題を解く。
      * @param end FizzBuzzを終える数。
      */
     public static void useForLoop(int end) {

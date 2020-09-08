@@ -9,7 +9,7 @@ public class FizzBuzzStream {
 	}
 
     /**
-     * Stream APIを活用した方法。
+     * Stream APIを活用した方法でFizzBuzz問題を解く。
      * @param end FizzBuzzを終える数。
      */
     public static void useStreamAPI(int end) {
