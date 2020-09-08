@@ -1,5 +1,10 @@
 package string.concat;
 
+/**
+ * 文字列結合の速度を比較するためのクラス。
+ * @author NKOJIMA
+ *
+ */
 public class Concatenation {
 
 	public static void main(String[] args) {
