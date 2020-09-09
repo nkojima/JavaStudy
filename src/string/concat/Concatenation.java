@@ -8,21 +8,24 @@ package string.concat;
 public class Concatenation {
 
 	public static void main(String[] args) {
-        plus();
-        concat();
-        builder();
-        buffer();
+		int count = 100000;
+
+        plus(count);
+        concat(count);
+        builder(count);
+        buffer(count);
 	}
 
 	/**
 	 * "+"演算子による文字列結合。
+	 * @param count 文字列を結合させる回数。
 	 */
-    public static void plus() {
+    public static void plus(int count) {
 
         long start = System.currentTimeMillis();
         String txt = "abc";
 
-        for (int i=0; i<100000; i++) {
+        for (int i=0; i<count; i++) {
             txt += "abc";
         }
 
@@ -32,13 +35,14 @@ public class Concatenation {
 
     /**
      * String.concat()による文字列結合。
+	 * @param count 文字列を結合させる回数。
      */
-    public static void concat() {
+    public static void concat(int count) {
 
         long start = System.currentTimeMillis();
         String txt = "abc";
 
-        for (int i=0; i<100000; i++) {
+        for (int i=0; i<count; i++) {
             txt = txt.concat("abc");
         }
 
@@ -48,13 +52,14 @@ public class Concatenation {
 
     /**
      * StringBuilderによる文字列結合。
+	 * @param count 文字列を結合させる回数。
      */
-    public static void builder() {
+    public static void builder(int count) {
 
         long start = System.currentTimeMillis();
         StringBuilder sb = new StringBuilder("abc");
 
-        for (int i=0; i<100000; i++) {
+        for (int i=0; i<count; i++) {
             sb.append("abc");
         }
 
@@ -65,13 +70,14 @@ public class Concatenation {
 
     /**
      * StringBufferによる文字列結合。
+	 * @param count 文字列を結合させる回数。
      */
-    public static void buffer() {
+    public static void buffer(int count) {
 
         long start = System.currentTimeMillis();
         StringBuffer sb = new StringBuffer("abc");
 
-        for (int i=0; i<100000; i++) {
+        for (int i=0; i<count; i++) {
             sb.append("abc");
         }
 
