@@ -14,6 +14,9 @@ public class Concatenation {
         buffer();
 	}
 
+	/**
+	 * "+"演算子による文字列結合。
+	 */
     public static void plus() {
 
         long start = System.currentTimeMillis();
@@ -27,6 +30,9 @@ public class Concatenation {
         System.out.println("+:" + (end - start) + "ms");
     }
 
+    /**
+     * String.concat()による文字列結合。
+     */
     public static void concat() {
 
         long start = System.currentTimeMillis();
@@ -40,6 +46,9 @@ public class Concatenation {
         System.out.println("concat:" + (end - start) + "ms");
     }
 
+    /**
+     * StringBuilderによる文字列結合。
+     */
     public static void builder() {
 
         long start = System.currentTimeMillis();
@@ -54,6 +63,9 @@ public class Concatenation {
         System.out.println("StringBuilder:" + (end - start) + "ms");
     }
 
+    /**
+     * StringBufferによる文字列結合。
+     */
     public static void buffer() {
 
         long start = System.currentTimeMillis();
