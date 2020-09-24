@@ -3,6 +3,7 @@ package algorithm.dijkstra_method.basic;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * ダイクストラ法による経路探索。
@@ -42,7 +43,7 @@ class Dijkstra {
 		int from = 6;
 		int to = 4;
 
-		ArrayList<Link> links = graphToLink();
+		List<Link> links = graphToLink();
 		HashMap<Integer, Node> nodeMap = pointToNode();
 
 		// 発地点までの距離を0とする。
@@ -53,7 +54,7 @@ class Dijkstra {
 
 		while(true) {
 			// 現在のノードに隣接するノードまでのリンクを取得する。
-			ArrayList<Link> neighbors = getNeighbors(links, current);
+			List<Link> neighbors = getNeighbors(links, current);
 
 			// 現在のノードを取得する。
 			Node currentNode = nodeMap.get(current);
@@ -85,7 +86,7 @@ class Dijkstra {
 		Node arrivalNode = nodeMap.get(to);
 		System.out.println("目的地までのコスト：" + arrivalNode.getCost());
 
-		ArrayList<Link> shortestPaths = new ArrayList<Link>();
+		List<Link> shortestPaths = new ArrayList<Link>();
 		while(true) {
 			Link shortestPath = arrivalNode.getShortestPath();
 			if (shortestPath!=null) {
@@ -117,9 +118,9 @@ class Dijkstra {
 	 * ネットワークデータからリンクのリストを作る。
 	 * @return リンクのリスト。
 	 */
-	static ArrayList<Link> graphToLink() {
+	static List<Link> graphToLink() {
 
-		ArrayList<Link> links = new ArrayList<Link>(GRAPH.length);
+		List<Link> links = new ArrayList<Link>(GRAPH.length);
 
 		for (int[] g : GRAPH) {
 			Link link = new Link(g[0],g[1],g[2]);
@@ -152,9 +153,9 @@ class Dijkstra {
 	 * @param current 現在のノードの番号
 	 * @return 現在のノードに隣接しているノードへのリンクのリスト。
 	 */
-	static ArrayList<Link> getNeighbors(ArrayList<Link> links, int current) {
+	static List<Link> getNeighbors(List<Link> links, int current) {
 
-		ArrayList<Link> neighbors = new ArrayList<Link>();
+		List<Link> neighbors = new ArrayList<Link>();
 
 		for (Link link : links) {
 			if (link.isNeighbor(current)) {
