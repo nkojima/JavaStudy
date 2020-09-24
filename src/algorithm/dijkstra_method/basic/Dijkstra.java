@@ -32,6 +32,10 @@ class Dijkstra {
 	private static final int[] POINTS = {1,2,3,4,5,6};
 
 
+	/**
+	 * メイン処理
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		// 発着地を決める
