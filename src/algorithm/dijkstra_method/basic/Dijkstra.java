@@ -3,6 +3,7 @@ package algorithm.dijkstra_method.basic;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * ダイクストラ法による経路探索。
@@ -14,6 +15,8 @@ class Dijkstra {
 	/**
 	 * Wikipediaの「ダイクストラ法」のページの図から起こしたネットワークデータ。
 	 * 内側の配列は{発ノード番号,着ノード番号,発着ノード間の距離}を表している。
+	 *
+	 * https://ja.wikipedia.org/wiki/%E3%83%80%E3%82%A4%E3%82%AF%E3%82%B9%E3%83%88%E3%83%A9%E6%B3%95
 	 */
 	private static final int[][] GRAPH = {
 		{1,2,7},{1,3,9},{1,6,14},			// 1番のノードから出ているリンク
@@ -30,13 +33,17 @@ class Dijkstra {
 	private static final int[] POINTS = {1,2,3,4,5,6};
 
 
+	/**
+	 * メイン処理
+	 * @param args
+	 */
 	public static void main(String[] args) {
 
 		// 発着地を決める
 		int from = 6;
 		int to = 4;
 
-		ArrayList<Link> links = graphToLink();
+		List<Link> links = graphToLink();
 		HashMap<Integer, Node> nodeMap = pointToNode();
 
 		// 発地点までの距離を0とする。
@@ -47,7 +54,7 @@ class Dijkstra {
 
 		while(true) {
 			// 現在のノードに隣接するノードまでのリンクを取得する。
-			ArrayList<Link> neighbors = getNeighbors(links, current);
+			List<Link> neighbors = getNeighbors(links, current);
 
 			// 現在のノードを取得する。
 			Node currentNode = nodeMap.get(current);
@@ -79,7 +86,7 @@ class Dijkstra {
 		Node arrivalNode = nodeMap.get(to);
 		System.out.println("目的地までのコスト：" + arrivalNode.getCost());
 
-		ArrayList<Link> shortestPaths = new ArrayList<Link>();
+		List<Link> shortestPaths = new ArrayList<Link>();
 		while(true) {
 			Link shortestPath = arrivalNode.getShortestPath();
 			if (shortestPath!=null) {
@@ -111,9 +118,9 @@ class Dijkstra {
 	 * ネットワークデータからリンクのリストを作る。
 	 * @return リンクのリスト。
 	 */
-	static ArrayList<Link> graphToLink() {
+	static List<Link> graphToLink() {
 
-		ArrayList<Link> links = new ArrayList<Link>(GRAPH.length);
+		List<Link> links = new ArrayList<Link>(GRAPH.length);
 
 		for (int[] g : GRAPH) {
 			Link link = new Link(g[0],g[1],g[2]);
@@ -146,9 +153,9 @@ class Dijkstra {
 	 * @param current 現在のノードの番号
 	 * @return 現在のノードに隣接しているノードへのリンクのリスト。
 	 */
-	static ArrayList<Link> getNeighbors(ArrayList<Link> links, int current) {
+	static List<Link> getNeighbors(List<Link> links, int current) {
 
-		ArrayList<Link> neighbors = new ArrayList<Link>();
+		List<Link> neighbors = new ArrayList<Link>();
 
 		for (Link link : links) {
 			if (link.isNeighbor(current)) {

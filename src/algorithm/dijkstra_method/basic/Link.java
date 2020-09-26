@@ -1,7 +1,7 @@
 package algorithm.dijkstra_method.basic;
 
 /**
- * リンクを表すクラス。
+ * ノード間の繋がりである「リンク」を表すクラス。
  * @author NKOJIMA
  *
  */
