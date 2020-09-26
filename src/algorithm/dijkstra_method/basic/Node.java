@@ -48,6 +48,7 @@ class Node {
 	 * @param cost このノードまでのコスト
 	 */
 	public void setShortestPath(Link link, int cost) {
+		// 始点からこのノードまでのコストが最小である場合に限り、最短経路とコストを再設定する。
 		if (this.cost > cost) {
 			this.cost = cost;
 			this.shortestPath = link;
