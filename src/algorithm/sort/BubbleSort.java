@@ -13,8 +13,34 @@ import java.util.List;
 public class BubbleSort {
 
 	public static void main(String[] args) {
-		List<Integer> list = createIntList();
+		sortAscending();
 	}
+
+	/**
+	 * 昇順に並べ替える。
+	 */
+	private static void sortAscending() {
+		System.out.println("昇順に並べ替える");
+
+		List<Integer> list = createIntList();
+		System.out.println("初期状態：" + list.toString());
+
+		int length = list.size();
+		int tmp;
+
+		for (int i=0; i<length-1; i++) {
+			for (int j=length-1; i<j; j--) {
+				if (list.get(j)<list.get(j-1)) {
+					tmp = list.get(j);
+					list.set(j, list.get(j-1));
+					list.set(j-1, tmp);
+				}
+			}
+		}
+
+		System.out.println("処理後の状態：" + list.toString());
+	}
+
 
 	/**
 	 * 1～10までの値がランダムに並んだリストを返す。
