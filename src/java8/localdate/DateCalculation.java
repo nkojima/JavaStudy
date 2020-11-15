@@ -2,6 +2,11 @@ package java8.localdate;
 
 import java.time.LocalDate;
 
+/**
+ * 日付の加減算を行うサンプルコード。
+ * @author NKOJIMA
+ *
+ */
 public class DateCalculation {
 
 	public static void main(String[] args) {
