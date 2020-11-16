@@ -3,6 +3,7 @@ package java8.localdate;
 import java.time.LocalDate;
 
 /**
+ * 現在日を表示するサンプルコード。
  * https://blog.y-yuki.net/entry/2016/09/15/003000
  * @author NKOJIMA
  *
