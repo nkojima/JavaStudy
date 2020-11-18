@@ -2,6 +2,11 @@ package java8.stream;
 
 import java.util.stream.IntStream;
 
+/**
+ * IntStreamクラスのサンプルコード。
+ * @author NKOJIMA
+ *
+ */
 public class IntStreamRange {
 
 	public static void main(String[] args) {

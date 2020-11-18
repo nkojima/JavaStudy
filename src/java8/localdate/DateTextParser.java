@@ -4,6 +4,11 @@ import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * 日付文字列をLocalDate型に変換するサンプルコード。
+ * @author NKOJIMA
+ * 
+ */
 public class DateTextParser {
 
 	private static final String DATE_STRING = "2020-11-07";
