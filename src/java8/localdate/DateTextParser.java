@@ -12,10 +12,13 @@ import java.time.format.DateTimeParseException;
  */
 public class DateTextParser {
 
+	/** 日付文字列 */
 	private static final String DATE_STRING = "2020-11-07";
 
+	/** 存在しない日付の日付文字列 */
 	private static final String INVALID_DATE_STRING = "2019-02-29";
 
+	/** フォーマットが不正な日付文字列 */
 	private static final String INVALID_FORMAT_DATE_STRING = "2019/02/28";
 
 	private static final String DATETIME_STRING = "2020-11-30T23:31:05";
