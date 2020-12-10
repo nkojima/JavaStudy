@@ -1,6 +1,10 @@
 package java8.zoned_date;
 
 import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.TextStyle;
+import java.util.Locale;
 
 /**
  * デフォルトのZoneIdを用いるクラス。
@@ -9,6 +13,31 @@ import java.time.ZoneId;
  */
 public class DefaultZoneId {
 	public static void main(String[] args) {
-		System.out.println("デフォルトのZoneId: " + ZoneId.systemDefault());
+		printZoneId();
+		printZoneName();
+		printZonedDateTime();
+		printFormattedZonedDateTime();
+	}
+
+	private static void printZoneId() {
+		System.out.println("デフォルトのTimeZoneId: " + ZoneId.systemDefault());
+	}
+
+	private static void printZoneName() {
+		ZoneId id = ZoneId.systemDefault();
+		System.out.println("デフォルトのTimeZone名(FULL): " + id.getDisplayName(TextStyle.FULL, Locale.JAPAN));
+		System.out.println("デフォルトのTimeZone名(NARROW): " + id.getDisplayName(TextStyle.NARROW, Locale.JAPAN));
+	}
+
+	private static void printZonedDateTime() {
+		ZoneId id = ZoneId.systemDefault();
+		ZonedDateTime zonedDateTime = ZonedDateTime.now(id);
+		System.out.println("デフォルトのTimeZoneの日時: " + zonedDateTime);
+	}
+
+	private static void printFormattedZonedDateTime() {
+		ZoneId id = ZoneId.systemDefault();
+		ZonedDateTime zonedDateTime = ZonedDateTime.now(id);
+		System.out.println("デフォルトのTimeZoneの日時（フォーマット済）: " + zonedDateTime.format(DateTimeFormatter.ofPattern("YYYY年MM月dd日 HH時mm分ss秒 (VV) (zz) (O)")));
 	}
 }
