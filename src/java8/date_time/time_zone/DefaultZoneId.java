@@ -1,4 +1,4 @@
-package java8.zoned_date;
+package java8.date_time.time_zone;
 
 import java.time.ZoneId;
 import java.time.ZonedDateTime;

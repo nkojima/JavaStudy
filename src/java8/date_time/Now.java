@@ -1,4 +1,4 @@
-package java8.localdate;
+package java8.date_time;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -16,6 +16,9 @@ public class Now {
 		printDateTime();
 	}
 
+	/**
+	 * 現在日を表示する。
+	 */
 	private static void printDate() {
 		System.out.println("----- LocalDate -----");
 
@@ -31,6 +34,9 @@ public class Now {
 		System.out.println("曜日:" + dt.getDayOfWeek());
 	}
 
+	/**
+	 * 現在日時を表示する。
+	 */
 	private static void printDateTime() {
 		System.out.println("----- LocalDateTime -----");
 
