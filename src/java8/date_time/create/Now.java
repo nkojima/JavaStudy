@@ -1,7 +1,9 @@
-package java8.localdate;
+package java8.date_time.create;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.time.ZonedDateTime;
 
 /**
  * 現在日、現在日時を表示するサンプルコード。
@@ -14,8 +16,13 @@ public class Now {
 	public static void main(String[] args) {
 		printDate();
 		printDateTime();
+		printZonedDateTime();
+		printOffsetDateTime();
 	}
 
+	/**
+	 * 現在日を表示する。
+	 */
 	private static void printDate() {
 		System.out.println("----- LocalDate -----");
 
@@ -31,6 +38,9 @@ public class Now {
 		System.out.println("曜日:" + dt.getDayOfWeek());
 	}
 
+	/**
+	 * 現在日時を表示する。
+	 */
 	private static void printDateTime() {
 		System.out.println("----- LocalDateTime -----");
 
@@ -48,5 +58,29 @@ public class Now {
 		System.out.println("時:" + ldt.getHour());
 		System.out.println("分:" + ldt.getMinute());
 		System.out.println("秒:" + ldt.getSecond());
+	}
+
+	/**
+	 * タイムゾーンを指定した現在日時を表示する。
+	 */
+	private static void printZonedDateTime() {
+		System.out.println("----- ZonedDateTime -----");
+
+		ZonedDateTime zdt = ZonedDateTime.now(); // システムのデフォルトのタイムゾーンを利用する。
+
+		// 現在日時を単純に表示する。
+		System.out.println("現在日時:" + zdt);
+	}
+
+	/**
+	 * オフセット付きの現在日時を表示する。
+	 */
+	private static void printOffsetDateTime() {
+		System.out.println("----- OffsetDateTime -----");
+
+		OffsetDateTime odt = OffsetDateTime.now(); // システムのデフォルトのタイムゾーンを利用する。
+
+		// 現在日時を単純に表示する。
+		System.out.println("現在日時:" + odt);
 	}
 }
