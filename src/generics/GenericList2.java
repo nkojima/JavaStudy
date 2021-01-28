@@ -1,6 +1,6 @@
 package generics;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class GenericList2 {
@@ -13,15 +13,19 @@ public class GenericList2 {
 	/**
 	 * 引数がtrueであればIntegerのList、falseであればDoubleのListを返す。
 	 * ※実行されるまで戻り値のListの要素の型が不明なので、ワイルドカードを使用している。
-	 * ※「? extends T」は上限付き境界ワイルドカードと呼ばれる。
+	 * ※「? extends T」は「TもしくはTの子孫クラス」を使うことができ、上限付き境界ワイルドカードと呼ばれる。
 	 * @param flag
 	 * @return
 	 */
-	private static List<? extends Number> getList(boolean flag) {
+	private static List<? extends A> getList(boolean flag) {
 		if (flag) {
-			return Arrays.asList(1,2,3);
+			List<A> list = new ArrayList<>();
+			list.add(new A());
+			return list;
 		} else {
-			return Arrays.asList(1.2, 2.3, 3.4);
+			List<B> list = new ArrayList<>();
+			list.add(new B());
+			return list;
 		}
 	}
 }
