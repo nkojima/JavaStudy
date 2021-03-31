@@ -39,6 +39,7 @@ public class FilesSample {
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
+		System.out.println("ファイルの書き込みが終了...");
 
 		/*
 		 * テキストファイルの読み込み。
@@ -52,5 +53,6 @@ public class FilesSample {
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
+		System.out.println("ファイルの読み込みが終了...");
 	}
 }
