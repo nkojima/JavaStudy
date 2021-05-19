@@ -2,6 +2,7 @@ package algorithm.shuffle;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 /**
  * フィッシャー・イェーツのシャッフルの改良版
@@ -18,8 +19,9 @@ public class FisherYatesRefined {
 
 		int[] ary = {0,1,2,3,4,5,6,7,8,9};
 		System.out.println("シャッフル前");
-		Arrays.stream(ary).forEach((elem) -> System.out.print(elem));
-		System.out.print("\n");
+		// int型の配列をStreamにするとIntStreamになるが、IntStreamではint型しか扱えないので、mapオブジェクトでString型に変換するとエラーが出てしまう。
+		// そのため、mapToObjメソッドで各要素をString型にしている。
+		System.out.println(Arrays.stream(ary).mapToObj(elem -> String.valueOf(elem)).collect(Collectors.joining(",")));
 
 		int n = ary.length;
 		Random rnd = new Random();
@@ -36,8 +38,7 @@ public class FisherYatesRefined {
 		}
 
 		System.out.println("シャッフル後");
-		Arrays.stream(ary).forEach((elem) -> System.out.print(elem));
-		System.out.print("\n");
+		System.out.println(Arrays.stream(ary).mapToObj(elem -> String.valueOf(elem)).collect(Collectors.joining(",")));
 	}
 
 }
