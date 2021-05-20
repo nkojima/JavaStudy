@@ -19,9 +19,8 @@ public class FisherYatesRefined {
 
 		int[] ary = {0,1,2,3,4,5,6,7,8,9};
 		System.out.println("シャッフル前");
-		// int型の配列をStreamにするとIntStreamになるが、IntStreamではint型しか扱えないので、mapオブジェクトでString型に変換するとエラーが出てしまう。
-		// そのため、mapToObjメソッドで各要素をString型にしている。
-		System.out.println(Arrays.stream(ary).mapToObj(elem -> String.valueOf(elem)).collect(Collectors.joining(",")));
+
+		printArray(ary);
 
 		int n = ary.length;
 		Random rnd = new Random();
@@ -38,7 +37,16 @@ public class FisherYatesRefined {
 		}
 
 		System.out.println("シャッフル後");
-		System.out.println(Arrays.stream(ary).mapToObj(elem -> String.valueOf(elem)).collect(Collectors.joining(",")));
+		printArray(ary);
 	}
 
+	/**
+	 * int型配列の中身をカンマ区切りで出力する。
+	 * @param ary
+	 */
+	private static void printArray(int[] ary) {
+		// int型の配列をStreamにするとIntStreamになるが、IntStreamではint型しか扱えないので、mapオブジェクトでString型に変換するとエラーが出てしまう。
+		// そのため、mapToObjメソッドで各要素をString型にしている。
+		System.out.println(Arrays.stream(ary).mapToObj(elem -> String.valueOf(elem)).collect(Collectors.joining(",")));
+	}
 }
