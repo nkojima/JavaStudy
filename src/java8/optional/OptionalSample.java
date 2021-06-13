@@ -13,6 +13,7 @@ public class OptionalSample {
 		System.out.println("おみくじを引きます。");
 
 		for (int i=0; i<10; i++) {
+			// drawOmikujiの戻り値が存在しない（empty）場合は、orElseの引数を返す。
 			System.out.println("おみくじの結果：" + drawOmikuji().orElse("失敗..."));
 		}
 	}
@@ -34,7 +35,7 @@ public class OptionalSample {
 		} else if (rnd > 0.2) {
 			message = Optional.of("extremely bad luck");	// 大凶
 		} else {
-			message = Optional.empty();
+			message = Optional.empty();						// nullの代わりにOptional.empty()を返す。
 		}
 
 		return message;
