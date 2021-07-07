@@ -1,4 +1,4 @@
-package algorithm.prime_numbers;
+package algorithm.number_theory.prime_numbers;
 
 import java.util.ArrayList;
 import java.util.Arrays;
