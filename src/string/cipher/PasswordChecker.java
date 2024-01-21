@@ -13,19 +13,19 @@ public class PasswordChecker {
 
 		for (String pw : passwords) {
 			if (!checkLength(pw)) {
-				System.out.println(pw + "はパスワードの長さの要件を満たしていません。");
+				System.out.println("「"+ pw + "」はパスワードの長さの要件を満たしていません。");
 			}
 			if (!checkOnlyAlNum(pw)) {
-				System.out.println(pw + "は半角英数字以外の文字が含まれています。");
+				System.out.println("「"+ pw + "」は半角英数字以外の文字が含まれています。");
 			}
 			if (!containsUpperCase(pw)) {
-				System.out.println(pw + "は大文字の英字が含まれていません。");
+				System.out.println("「"+ pw + "」は大文字の英字が含まれていません。");
 			}
 			if (!containsLowerCase(pw)) {
-				System.out.println(pw + "は小文字の英字が含まれていません。");
+				System.out.println("「"+ pw + "」は小文字の英字が含まれていません。");
 			}
 			if (!containsNum(pw)) {
-				System.out.println(pw + "は数字が含まれていません。");
+				System.out.println("「"+ pw + "」は数字が含まれていません。");
 			}
 		}
 	}
